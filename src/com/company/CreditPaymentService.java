@@ -1,11 +1,9 @@
 package com.company;
 
-public class CreditPaymentService
-{
-    public double calculate(double loanAmount, double annualProcent, int months)
-    {
-        double percent_monthly = annualProcent/12;
+public class CreditPaymentService {
+    public double calculate(double loanAmount, double annualProcent, int monthsTotal) {
+        double percentMonthly = annualProcent / 12;
         //а где взяла формулу, не скажу :-)
-        return loanAmount*percent_monthly*Math.pow(1+percent_monthly, months)/(Math.pow(1+percent_monthly, months)-1);
+        return loanAmount * percentMonthly * Math.pow(1 + percentMonthly, monthsTotal) / (Math.pow(1 + percentMonthly, monthsTotal) - 1);
     }
 }
